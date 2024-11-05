@@ -24,6 +24,7 @@ pipeline {
                 label 'Kubernetes-Agent'
             }
             steps {
+                sh 'kubectl delete deploy nginx-deployment'
                 sh 'kubectl apply -f deployment.yaml'
                 sh 'kubectl apply -f service.yaml'
             }
