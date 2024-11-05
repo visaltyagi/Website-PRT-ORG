@@ -9,14 +9,6 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Git') {
-            agent {
-                label 'Kubernetes-Agent'
-            }
-            steps {
-                git 'https://github.com/visaltyagi/Website-PRT-ORG.git'
-            }
-        }
         stage('Docker') {
             agent {
                 label 'Kubernetes-Agent'
